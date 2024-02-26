@@ -2,32 +2,7 @@
     "status": "ok",
     "totalResults": 952,
     "articles": [
-    {
-    "source": {
-    "id": null,
-    "name": "Arxiv.org"
-    },
-    "author": null,
-    "title": "Grandmaster-Level Chess Without Search",
-    "description": "The recent breakthrough successes in machine learning are mainly attributed to scale: namely large-scale attention-based architectures and datasets of unprecedented scale. This paper investigates the impact of training at scale for chess. Unlike traditional c…",
-    "url": "https://arxiv.org/abs/2402.04494",
-    "urlToImage": "https://arxiv.org/static/browse/0.3.4/images/arxiv-logo-fb.png",
-    "publishedAt": "2024-02-08T13:57:19Z",
-    "content": "arXivLabs is a framework that allows collaborators to develop and share new arXiv features directly on our website.\r\nBoth individuals and organizations that work with arXivLabs have embraced and acce… [+257 chars]"
-    },
-    {
-    "source": {
-    "id": null,
-    "name": "Github.com"
-    },
-    "author": "262588213843476",
-    "title": "Grand-Master Level Chess Without Search: Modeling Choices and Their Implications",
-    "description": "Grand-master Level Chess without Search. GitHub Gist: instantly share code, notes, and snippets.",
-    "url": "https://gist.github.com/yoavg/8b98bbd70eb187cf1852b3485b8cda4f",
-    "urlToImage": "https://github.githubassets.com/assets/gist-og-image-54fd7dc0713e.png",
-    "publishedAt": "2024-02-10T18:13:54Z",
-    "content": "Yoav Golderg, February 2024.\r\nResearchers at Google DeepMind released a paper about a learned systems that is able to play blitz-chess at a grandmaster level, without using search. This is interestin… [+25681 chars]"
-    },
+ 
     {
     "source": {
     "id": null,
@@ -66,32 +41,6 @@
     "urlToImage": "https://s11279.pcdn.co/wp-content/uploads/2024/02/Screenshot-2024-02-09-134618-630x393.png",
     "publishedAt": "2024-02-09T18:04:00Z",
     "content": "Checkmate!\r\nBoosie Badazz is standing on business in his new music video, “Business Man”.\r\nCourtesy of Olu The Visionary, the Baton Rouge rapper shares a moment of clarity on his status in the game w… [+441 chars]"
-    },
-    {
-    "source": {
-    "id": null,
-    "name": "Creative Bloq"
-    },
-    "author": "joe.foley@futurenet.com (Joseph Foley)",
-    "title": "Adobe's native Vision Pro apps could be a game changer for creatives",
-    "description": "Adobe Firefly and Lightroom come to Apple's mixed reality headset",
-    "url": "https://www.creativebloq.com/news/apple-vision-pro-adobe-firefly",
-    "urlToImage": "https://cdn.mos.cms.futurecdn.net/HDdZp9SxevCMfy2HbHYkVD-1200-80.jpg",
-    "publishedAt": "2024-02-03T13:18:48Z",
-    "content": "Apple's mixed-reality headset has officially launched, and with the first Vision Pro reviews now in, attention is shifting to what's available and what's not. Some major apps aren't supported, but Ad… [+3620 chars]"
-    },
-    {
-    "source": {
-    "id": null,
-    "name": "Toodaylab.com"
-    },
-    "author": "吴诗源",
-    "title": "今日消费资讯：SKIMS 情人节限时体验店在成都亮相、玩具反斗城正式入驻饿了么",
-    "description": "SKIMS 情人节限时体验店在成都亮相1 月 26 日，连卡佛在成都 IFS 三楼中庭带来 SKIMS 的情人节限时体验店。SKIMS 由金·卡戴珊和瑞典设计师 Jens Grede 共同创立，这是品牌在中国内地的首个限定店，金·卡戴珊表示成都的情人节限时体验店“是 SKIMS 在亚洲乃至全球持续发展的一个重要里程碑”。这次连卡佛为 SKIMS 带来了一个专属于成都的粉色空间，设计上融入了 SKIMS 品牌标志性的圆角设计和亮面处理，粉红色主色调搭配心形陈列也呼应了即将到来的情人节。店内主角则是 SKIMS 的情…",
-    "url": "https://www.toodaylab.com/82587",
-    "urlToImage": null,
-    "publishedAt": "2024-01-30T00:30:00Z",
-    "content": "SKIMS \r\n1 26 IFS SKIMS \r\nSKIMS · Jens Grede · SKIMS \r\nSKIMS SKIMS \r\n SKIMS SKIMS Fits EverybodySeamless Sculpt Cotton \r\n2 8 SKIMS 2021 SKIMS\r\nRIMOWA Attaché Chess \r\n1 29 RIMOWA Attaché Chess \r\n1 25 4… [+119 chars]"
     },
     {
     "source": {
