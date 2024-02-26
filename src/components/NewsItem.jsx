@@ -4,7 +4,7 @@ import Card from 'react-bootstrap/Card';
 
 export class NewsItem extends Component {
     render() {
-        const { title, desc, url } = this.props;
+        const { title, desc, url, newsUrl } = this.props;
         return (
 
             // <h2>NewsMonkey Headlines</h2>
@@ -20,7 +20,8 @@ export class NewsItem extends Component {
                         <Card.Text>
                             {desc}
                         </Card.Text>
-                        <Button variant="primary btn-sm">Read More</Button>
+                        {/* <Button variant="primary btn-sm" {newsUrl} >Read More</Button> */}
+                        <a href={newsUrl} className='btn btn-sm btn-primary' >Read More</a>
                     </Card.Body>
                 </Card>
             </div>
