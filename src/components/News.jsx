@@ -79,9 +79,12 @@ export class News extends Component {
 
         return (
             <div>
-                <div className="row">
+                <div className="row my-2 mx-4">
                     <div className="column col-md-4">
-                        <NewsItem title="myTitle" desc="myDesc" url="https://0043d976.rocketcdn.me/wp-content/uploads/2024/02/best-chess-players-of-all-time.jpg" />
+                        {this.state.articles.map((element) => {
+                            return <NewsItem title={element.title} key={element.url} desc={element.description} url={element.urlToImage} />
+                        })}
+
                     </div>
                 </div>
             </div>
