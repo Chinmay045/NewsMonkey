@@ -18,10 +18,10 @@ export class NewsItem extends Component {
                     <Card.Body>
                         <Card.Title>{title}</Card.Title>
                         <Card.Text>
-                            {desc}
+                            {desc}...
                         </Card.Text>
                         {/* <Button variant="primary btn-sm" {newsUrl} >Read More</Button> */}
-                        <a href={newsUrl} className='btn btn-sm btn-primary' >Read More</a>
+                        <a href={newsUrl} target='_blank' className='btn btn-sm btn-primary' >Read More</a>
                     </Card.Body>
                 </Card>
             </div>
