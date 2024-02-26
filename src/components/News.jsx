@@ -78,16 +78,19 @@ export class News extends Component {
     render() {
 
         return (
-            <div>
-                <div className="row my-2 mx-4">
-                    <div className="column col-md-4">
-                        {this.state.articles.map((element) => {
-                            return <NewsItem title={element.title} key={element.url} desc={element.description} url={element.urlToImage} />
-                        })}
 
-                    </div>
+            <div className="container my-2 ">
+                <div className="row ">
+
+                    {this.state.articles.map((element) => {
+                        return <div className='col-md-4' key={element.url}>
+                            <NewsItem title={element.title} desc={element.description} url={element.urlToImage} />
+                        </div >
+                    })}
                 </div>
             </div>
+
+
         )
     }
 }
