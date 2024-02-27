@@ -19,7 +19,17 @@ export class News extends Component {
         let parsedData = await data.json();
         console.log(parsedData);
         this.setState({ articles: parsedData.articles })
+    };
+
+    handlePrevClick = () => {
+        console.log("Previous");
     }
+
+    handleNextClick = () => {
+        console.log("Next");
+    }
+
+
 
 
     render() {
@@ -36,14 +46,18 @@ export class News extends Component {
                     })}
                 </div>
                 <div className="container d-flex justify-content-between">
-                    <a target='_blank' className='btn btn-sm btn-dark ' >&larr; Previous</a>
-                    <a target='_blank' className='btn btn-sm btn-dark ' >Next &rarr;</a>
+                    {/* <a target='_blank' className='btn btn-sm btn-dark ' href='' onClick={handlePrevClick} >&larr; Previous</a>
+                    <a target='_blank' className='btn btn-sm btn-dark ' href='' onClick={handleNextClick}>Next &rarr;</a>
+                     */}
+
+                    <button type='button' className='btn btn-dark' onClick={this.handlePrevClick}>&larr; Previous</button>
+                    <button type='button' className='btn btn-dark' onClick={this.handleNextClick}>Next &rarr;</button>
                 </div>
             </div>
 
 
         )
     }
-}
+};
 
 export default News
