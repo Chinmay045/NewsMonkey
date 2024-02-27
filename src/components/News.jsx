@@ -1,5 +1,6 @@
 import React, { Component } from 'react'
 import NewsItem from './NewsItem'
+import { Spinner } from 'react-bootstrap';
 // import Button from 'react-bootstrap/Button';
 
 
@@ -9,6 +10,7 @@ export class News extends Component {
         super();
         this.state = {
             articles: [],
+            loading: false
         }
     };
 
@@ -23,14 +25,17 @@ export class News extends Component {
 
     handlePrevClick = async () => {
         console.log("Previous");
+
         let url = `https://newsapi.org/v2/top-headlines?country=in&apiKey=69955393c74b4f1187eb003f323254bd&page=${this.state.page - 1}&pageSize = ${this.props.pageSize}`;
+        this.setState({ loading: true })
         let data = await fetch(url);
         let parsedData = await data.json();
         console.log(parsedData);
 
         this.setState({
             page: this.state.page + 1,
-            articles: parsedData.articles
+            articles: parsedData.articles,
+            loading: false
         })
     }
 
@@ -41,10 +46,11 @@ export class News extends Component {
         }
         else {
             let url = `https://newsapi.org/v2/top-headlines?country=in&apiKey=69955393c74b4f1187eb003f323254bd&page=${this.state.page + 1}&pageSize=${this.props.pageSize}`;
+            this.setState({ loading: true })
             let data = await fetch(url);
             let parsedData = await data.json();
             console.log(parsedData);
-
+            this.setState({ loading: false })
             this.setState({
                 page: this.state.page + 1,
                 articles: parsedData.articles
@@ -53,14 +59,13 @@ export class News extends Component {
     }
 
 
-
-
-
     render() {
 
         return (
 
             <div className="container my-2 ">
+                <h1 className='text-center'>NewsMonkey -Top Headlines</h1>
+                {this.state.loading && < Spinner />}
                 <div className="row ">
 
                     {this.state.articles.map((element) => {
