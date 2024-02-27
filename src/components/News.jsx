@@ -1,6 +1,6 @@
 import React, { Component } from 'react'
 import NewsItem from './NewsItem'
-import Button from 'react-bootstrap/Button';
+// import Button from 'react-bootstrap/Button';
 
 
 export class News extends Component {
@@ -14,20 +14,44 @@ export class News extends Component {
 
     async componentDidMount() {
         console.log("cdm");
-        let url = "https://newsapi.org/v2/top-headlines?country=in&apiKey=69955393c74b4f1187eb003f323254bd";
+        let url = "https://newsapi.org/v2/top-headlines?country=in&apiKey=69955393c74b4f1187eb003f323254bd&pageSize = 20";
         let data = await fetch(url);
         let parsedData = await data.json();
         console.log(parsedData);
-        this.setState({ articles: parsedData.articles })
+        this.setState({ articles: parsedData.articles, totalResults: parsedData.totalResults })
     };
 
-    handlePrevClick = () => {
+    handlePrevClick = async () => {
         console.log("Previous");
+        let url = `https://newsapi.org/v2/top-headlines?country=in&apiKey=69955393c74b4f1187eb003f323254bd&page = ${this.state.page - 1}&pageSize = 20`;
+        let data = await fetch(url);
+        let parsedData = await data.json();
+        console.log(parsedData);
+
+        this.setState({
+            page: this.state.page + 1,
+            articles: parsedData.articles
+        })
     }
 
-    handleNextClick = () => {
+    handleNextClick = async () => {
         console.log("Next");
+        if (Math.ceil(this.state.page + 1 > this.state.totalResults / 20)) {
+
+        }
+        else {
+            let url = `https://newsapi.org/v2/top-headlines?country=in&apiKey=69955393c74b4f1187eb003f323254bd&page = ${this.state.page + 1}&pageSize = 20`;
+            let data = await fetch(url);
+            let parsedData = await data.json();
+            console.log(parsedData);
+
+            this.setState({
+                page: this.state.page + 1,
+                articles: parsedData.articles
+            })
+        }
     }
+
 
 
 
@@ -50,7 +74,7 @@ export class News extends Component {
                     <a target='_blank' className='btn btn-sm btn-dark ' href='' onClick={handleNextClick}>Next &rarr;</a>
                      */}
 
-                    <button type='button' className='btn btn-dark' onClick={this.handlePrevClick}>&larr; Previous</button>
+                    <button type='button' disabled={this.state.page <= 1} className='btn btn-dark' onClick={this.handlePrevClick}>&larr; Previous</button>
                     <button type='button' className='btn btn-dark' onClick={this.handleNextClick}>Next &rarr;</button>
                 </div>
             </div>
