@@ -7,7 +7,7 @@ export class NavBar extends Component {
     render() {
         return (
             <div>
-                <Navbar expand="lg" className="bg-body-tertiary">
+                <Navbar  className="navbar navbar-expand-lg  navbar-light bg-light">
                     <Container>
                         <Navbar.Brand href="#home">NewsMonkey</Navbar.Brand>
                         <Navbar.Toggle aria-controls="basic-navbar-nav" />

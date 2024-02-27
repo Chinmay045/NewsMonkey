@@ -21,7 +21,7 @@ export class NewsItem extends Component {
                             {desc}...
                         </Card.Text>
                         {/* <Button variant="primary btn-sm" {newsUrl} >Read More</Button> */}
-                        <a href={newsUrl} target='_blank' className='btn btn-sm btn-primary' >Read More</a>
+                        <a href={newsUrl} target='_blank' className='btn btn-sm btn-dark' >Read More</a>
                     </Card.Body>
                 </Card>
             </div>
