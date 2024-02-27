@@ -3,6 +3,7 @@ import React, { Component } from 'react'
 import Container from 'react-bootstrap/Container';
 import Nav from 'react-bootstrap/Nav';
 import Navbar from 'react-bootstrap/Navbar';
+import { Link } from 'react-router-dom';
 export class NavBar extends Component {
     render() {
         return (
@@ -13,15 +14,14 @@ export class NavBar extends Component {
                         <Navbar.Toggle aria-controls="basic-navbar-nav" />
                         <Navbar.Collapse id="basic-navbar-nav">
                             <Nav className="me-auto">
-                                <Nav.Link href="#home">Home</Nav.Link>
-                                <li className='nav-item'> <Nav.Link href="#link">About</Nav.Link> </li>
-                                    <li className='nav-item'> <Nav.Link href="#link"> business </Nav.Link></li>
-                                    <li className='nav-item'> <Nav.Link href="#link"> entertainment</Nav.Link> </li>
-                                    <li className='nav-item'> <Nav.Link href="#link"> generalhealth </Nav.Link></li>
-                                    <li className='nav-item'> <Nav.Link href="#link"> science</Nav.Link> </li>
-                                    <li className='nav-item'>  <Nav.Link href="#link">sports</Nav.Link> </li>
-                                    <li className='nav-item'> <Nav.Link href="#link"> technology </Nav.Link></li>
-                               
+                                <li className='nav-item'><Link className="nav-link" to="/">Home</Link></li>
+                                <li className='nav-item'> <Link className="nav-link" to="/business"> Business </Link></li>
+                                <li className='nav-item'> <Link className="nav-link" to="/entertainment"> Entertainment</Link> </li>
+                                <li className='nav-item'> <Link className="nav-link" to="/health"> Health </Link></li>
+                                <li className='nav-item'> <Link className="nav-link" to="/science"> Science</Link> </li>
+                                <li className='nav-item'>  <Link className="nav-link" to="/sports">Sports</Link> </li>
+                                <li className='nav-item'> <Link className="nav-link" to="/technology"> Technology </Link></li>
+
                             </Nav>
                         </Navbar.Collapse>
                     </Container>
