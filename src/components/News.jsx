@@ -36,8 +36,8 @@ export class News extends Component {
                     })}
                 </div>
                 <div className="container d-flex justify-content-between">
-                    <a target='_blank' className='btn btn-sm btn-dark ' >Previous</a>
-                    <a target='_blank' className='btn btn-sm btn-dark ' >Next</a>
+                    <a target='_blank' className='btn btn-sm btn-dark ' >&larr; Previous</a>
+                    <a target='_blank' className='btn btn-sm btn-dark ' >Next &rarr;</a>
                 </div>
             </div>
 
