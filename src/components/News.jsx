@@ -14,7 +14,7 @@ export class News extends Component {
 
     async componentDidMount() {
         console.log("cdm");
-        let url = "https://newsapi.org/v2/top-headlines?country=in&apiKey=69955393c74b4f1187eb003f323254bd&pageSize = 20";
+        let url = `https://newsapi.org/v2/top-headlines?country=in&apiKey=69955393c74b4f1187eb003f323254bd&pageSize=${this.props.pageSize}`;
         let data = await fetch(url);
         let parsedData = await data.json();
         console.log(parsedData);
@@ -23,7 +23,7 @@ export class News extends Component {
 
     handlePrevClick = async () => {
         console.log("Previous");
-        let url = `https://newsapi.org/v2/top-headlines?country=in&apiKey=69955393c74b4f1187eb003f323254bd&page = ${this.state.page - 1}&pageSize = 20`;
+        let url = `https://newsapi.org/v2/top-headlines?country=in&apiKey=69955393c74b4f1187eb003f323254bd&page=${this.state.page - 1}&pageSize = ${this.props.pageSize}`;
         let data = await fetch(url);
         let parsedData = await data.json();
         console.log(parsedData);
@@ -40,7 +40,7 @@ export class News extends Component {
 
         }
         else {
-            let url = `https://newsapi.org/v2/top-headlines?country=in&apiKey=69955393c74b4f1187eb003f323254bd&page = ${this.state.page + 1}&pageSize = 20`;
+            let url = `https://newsapi.org/v2/top-headlines?country=in&apiKey=69955393c74b4f1187eb003f323254bd&page=${this.state.page + 1}&pageSize=${this.props.pageSize}`;
             let data = await fetch(url);
             let parsedData = await data.json();
             console.log(parsedData);
@@ -75,7 +75,7 @@ export class News extends Component {
                      */}
 
                     <button type='button' disabled={this.state.page <= 1} className='btn btn-dark' onClick={this.handlePrevClick}>&larr; Previous</button>
-                    <button type='button' className='btn btn-dark' onClick={this.handleNextClick}>Next &rarr;</button>
+                    <button type='button' disabled={this.state.page + 1 > this.state.totalResults / this.props.pageSize} className='btn btn-dark' onClick={this.handleNextClick}>Next &rarr;</button>
                 </div>
             </div>
 
