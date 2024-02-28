@@ -4,7 +4,7 @@ import Card from 'react-bootstrap/Card';
 
 export class NewsItem extends Component {
     render() {
-        const { title, desc, url, newsUrl, author, date, source } = this.props;
+        const { title, desc, url, newsUrl, author, date, } = this.props;
         return (
 
             // <h2>NewsMonkey Headlines</h2>
