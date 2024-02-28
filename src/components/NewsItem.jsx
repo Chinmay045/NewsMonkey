@@ -4,7 +4,7 @@ import Card from 'react-bootstrap/Card';
 
 export class NewsItem extends Component {
     render() {
-        const { title, desc, url, newsUrl, author, date } = this.props;
+        const { title, desc, url, newsUrl, author, date, source } = this.props;
         return (
 
             // <h2>NewsMonkey Headlines</h2>
@@ -16,11 +16,11 @@ export class NewsItem extends Component {
                 <Card style={{ width: '18rem' }}>
                     <Card.Img variant="top" src={url} />
                     <Card.Body>
-                        <Card.Title>{title}</Card.Title>
+                        <Card.Title > {title}</Card.Title>
                         <Card.Text>
                             {desc}...
                         </Card.Text>
-                        <p className='card-text' ><small className='text-muted'>By {author ? author : "Unknown"} on {new Date(date).toGMTString()}</small></p>
+                        <p className='card-text ' ><small className='text-muted muted text-danger'>By {author ? author : "Unknown"} on {new Date(date).toGMTString()}</small></p>
                         {/* <Button variant="primary btn-sm" {newsUrl} >Read More</Button> */}
                         <a href={newsUrl} rel="noreferrer" target='_blank' className='btn btn-sm btn-dark' >Read More</a>
                     </Card.Body>
