@@ -3,7 +3,7 @@ import NewsItem from './NewsItem';
 import { Spinner } from 'react-bootstrap';
 // import Button from 'react-bootstrap/Button';
 import PropTypes from 'prop-types';
-import InfiniteScroll from "react-infinite-scroll-component";
+// import InfiniteScroll from "react-infinite-scroll-component";
 
 
 
@@ -30,20 +30,19 @@ export class News extends Component {
     };
 
     async updateNews() {
-        this.props.setPreogress(0);
+        // this.props.setPreogress(0);
         const url = `https://newsapi.org/v2/top-headlines?country=${this.props.country}&category=${this.props.category}&apiKey=69955393c74b4f1187eb003f323254bd&page=${this.state.page}&pageSize=${this.props.pageSize}`;
         let data = await fetch(url);
         let parsedData = await data.json();
         console.log(parsedData);
         this.setState({ articles: parsedData.articles, totalResults: parsedData.totalResults, loading: false })
-        this.props.setPreogress(100);
+        // this.props.setPreogress(0);
 
     }
 
     async componentDidMount() {
         console.log("cdm");
         this.setState({ loading: true })
-
         let url = `https://newsapi.org/v2/top-headlines?country=${this.props.country}&category=${this.props.category}&apiKey=69955393c74b4f1187eb003f323254bd&pageSize=${this.props.pageSize}`;
         let data = await fetch(url);
         let parsedData = await data.json();
@@ -73,11 +72,11 @@ export class News extends Component {
         console.log(parsedData);
         this.setState({ articles: this.state.articles.concat, totalResults: parsedData.totalResults, loading: false })
     }
-
+    
 
     render() {
         // console.log(this.state.articles)
-
+       
         return (
             <>
                 {/* / <div className="container my-2 "> */}
@@ -94,9 +93,11 @@ export class News extends Component {
 
                 <div className="container">
                     <div className="row ">
-                        {this.state.articles.map((element) => {
+
+
+                        {  this.state.articles.map((element) => {
                             return <div className='col-md-4' key={element.url}>
-                                <News setPreogress={setProgress} Item title={element.title ? element.title.slice(0, 45) : ""} desc={element.description ? element.description.slice(0, 88) : ""} url={element.urlToImage} newsUrl={element.url} author={element.author} date={element.publishedAt} source={element.source.name} />
+                                <News setPreogress={this.setProgress} Item title={element.title ? element.title.slice(0, 45) : ""} desc={element.description ? element.description.slice(0, 88) : ""} url={element.urlToImage} newsUrl={element.url} author={element.author} date={element.publishedAt} source={element.source.name} />
                             </div >
                         })}
 
