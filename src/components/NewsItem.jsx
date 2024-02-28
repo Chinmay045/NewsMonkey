@@ -20,7 +20,7 @@ export class NewsItem extends Component {
                         <Card.Text>
                             {desc}...
                         </Card.Text>
-                        <p className='card-text' ><small className='text-muted'>By {author} on {date}</small></p>
+                        <p className='card-text' ><small className='text-muted'>By {author ? author : "Unknown"} on {date}</small></p>
                         {/* <Button variant="primary btn-sm" {newsUrl} >Read More</Button> */}
                         <a href={newsUrl} target='_blank' className='btn btn-sm btn-dark' >Read More</a>
                     </Card.Body>
