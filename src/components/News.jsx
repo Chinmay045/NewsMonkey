@@ -30,11 +30,14 @@ export class News extends Component {
     };
 
     async updateNews() {
+        this.props.setPreogress(0);
         const url = `https://newsapi.org/v2/top-headlines?country=${this.props.country}&category=${this.props.category}&apiKey=69955393c74b4f1187eb003f323254bd&page=${this.state.page}&pageSize=${this.props.pageSize}`;
         let data = await fetch(url);
         let parsedData = await data.json();
         console.log(parsedData);
         this.setState({ articles: parsedData.articles, totalResults: parsedData.totalResults, loading: false })
+        this.props.setPreogress(100);
+
     }
 
     async componentDidMount() {
@@ -93,7 +96,7 @@ export class News extends Component {
                     <div className="row ">
                         {this.state.articles.map((element) => {
                             return <div className='col-md-4' key={element.url}>
-                                <NewsItem title={element.title ? element.title.slice(0, 45) : ""} desc={element.description ? element.description.slice(0, 88) : ""} url={element.urlToImage} newsUrl={element.url} author={element.author} date={element.publishedAt} source={element.source.name} />
+                                <News setPreogress={setProgress} Item title={element.title ? element.title.slice(0, 45) : ""} desc={element.description ? element.description.slice(0, 88) : ""} url={element.urlToImage} newsUrl={element.url} author={element.author} date={element.publishedAt} source={element.source.name} />
                             </div >
                         })}
 
